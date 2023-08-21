@@ -1,10 +1,10 @@
 import './App.css'
-import ProductList from './components/ProductList/ProductList'
+import Form from './components/Form/Form'
 
 function App() {
   return (
     <>
-     <ProductList /> 
+     <Form />
     </>
   )
 }
