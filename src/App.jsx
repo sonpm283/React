@@ -1,10 +1,10 @@
 import './App.css'
-import CorrectlyState from './components/CorrectlyState'
+import ProductList from './components/ProductList/ProductList'
 
 function App() {
   return (
     <>
-      <CorrectlyState />
+     <ProductList /> 
     </>
   )
 }
