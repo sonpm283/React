@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 const lists = ['BMW', 'Mercedes', 'Audi']
 
 const fetchApi = () => {
@@ -9,7 +9,7 @@ const fetchApi = () => {
   })
 }
 
-export default class Clock extends Component {
+export default class Clock extends React.Component {
   constructor(props) {
     super(props)
     this.state = {

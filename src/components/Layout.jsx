@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 
 function Layout({children}) {
@@ -11,6 +10,5 @@ Layout.propTypes = {
     PropTypes.arrayOf(PropTypes.element)
   ])
 }
-
 
 export default Layout

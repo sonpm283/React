@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
 export default class BareButton extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     // trong class component chỉ có thể state trong hàm contructor
     this.state = {
-      name: 'Phan Minh Son'
-    }
+      name: "Nemo",
+    };
   }
   // currying sử dụng khi muốn truyền tham số trong onClick ví dụ: <button onClick={this.handleClick('add')}>Add</button>
   // handleClick = (value) => (event) => {
@@ -22,22 +22,36 @@ export default class BareButton extends React.Component {
   // <button onClick={(event) => this.handleClick(event, 'Add')}>Add</button>
   handleClick = (event, value) => {
     console.log(event, value);
-  }
+  };
 
   componentDidMount() {
-    console.log('didmount');
+    console.log("didmount");
+    console.log(this.state.name);
+  }
+
+  componentDidUpdate() {
+    console.log("didmount");
+    console.log(this.state.name);
+  }
+
+  componentWillUnmount() {
+    console.log("didmount");
     console.log(this.state.name);
   }
 
   render() {
-    console.log('render');
+    console.log("render");
     console.log(this.state.name);
     return (
-      <div className='btn_box'>
-        <button onClick={(event) => this.handleClick(event, 'Add')}>Add</button>
-        <button onClick={(event) => this.handleClick(event, 'Edit')}>Edit</button>
-        <button onClick={(event) => this.handleClick(event, 'Delete')}>Delete</button>
+      <div className="btn_box">
+        <button onClick={(event) => this.handleClick(event, "Add")}>Add</button>
+        <button onClick={(event) => this.handleClick(event, "Edit")}>
+          Edit
+        </button>
+        <button onClick={(event) => this.handleClick(event, "Delete")}>
+          Delete
+        </button>
       </div>
-    )
+    );
   }
 }
