@@ -5,20 +5,23 @@ export class Form extends Component {
     super(props)
     
     this.state = {
-      value: '',
-      selectValue: 'coconut'
+      name: '',
+      food: 'coconut',
+      marriage: false,
+      address: ''
     }
   }
 
   handleChange = (event) => {
-    this.setState({
-      value: event.target.value
-    })
-  }
+    const {target} = event
 
-  handleSelectChange = (event) => {
+    //const target = event.target
+    const value = target.type === 'checkbox' ? target.checked : target.value
+    const {name} = event.target
+
     this.setState({
-      selectValue: event.target.value
+      //name lấy từ attr "name" của input đó
+      [name]: value // event.target.checked(nếu là checkbox) || event.target.value(nếu là các input khác)
     })
   }
 
@@ -30,20 +33,37 @@ export class Form extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+
         <input 
-          value={this.state.value} 
+          name='name'
+          value={this.state.name} 
           onChange={this.handleChange} type="text" 
         />
-        <input type="submit" value='Submit'/>
+
+        <input 
+          type="checkbox" 
+          name='marriage' 
+          checked={this.state.marriage} 
+          onChange={this.handleChange} 
+        />
+
+        <textarea 
+          value={this.state.address} 
+          name='address' 
+          onChange={this.handleChange}>
+        </textarea>
 
         <select 
-          value={this.state.selectValue}
-          onChange={this.handleSelectChange}
+          value={this.state.food}
+          onChange={this.handleChange}
+          name='food'
         >
           <option value="lime">lime</option>
           <option value="coconut">coconut</option>
           <option value="orange">orange</option>
         </select>
+
+        <input type="submit" value='Submit'/>
       </form>
     )
   }
