@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export class TemperatureInput extends Component {
 
@@ -7,8 +8,8 @@ export class TemperatureInput extends Component {
   }
 
   render() {
-    const { title, temperature, name } = this.props
-
+    const { title, temperature } = this.props
+    
     return (
       <div>
         <fieldset>
@@ -22,6 +23,12 @@ export class TemperatureInput extends Component {
       </div>
     )
   }
+}
+
+TemperatureInput.propTypes = {
+  onTemperatureChange: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  temperature: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
 }
 
 export default TemperatureInput

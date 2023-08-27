@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropsType from 'prop-types'
 
 export class BoillingVerdict extends Component {
   render() {
@@ -8,6 +9,10 @@ export class BoillingVerdict extends Component {
       </div>
     )
   }
+}
+
+BoillingVerdict.propTypes = {
+  celsius: PropsType.number.isRequired
 }
 
 export default BoillingVerdict
