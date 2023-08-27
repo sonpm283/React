@@ -1,10 +1,10 @@
 import './App.css'
-import UncontrolledComponent from './components/UncontrolledComponent/UncontrolledComponent'
+import Calculator from './components/Calculator/Calculator'
 
 function App() {
   return (
     <>
-      <UncontrolledComponent />
+      <Calculator />
     </>
   )
 }
