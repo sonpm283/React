@@ -1,10 +1,10 @@
 import './App.css'
-import Calculator from './components/Calculator/Calculator'
+import FilterableProductTable from './components/FilterableProductTable/FilterableProductTable'
 
 function App() {
   return (
     <>
-      <Calculator />
+      <FilterableProductTable />
     </>
   )
 }
