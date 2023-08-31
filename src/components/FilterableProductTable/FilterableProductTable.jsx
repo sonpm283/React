@@ -19,11 +19,11 @@ const fetchApi = new Promise(resolve => resolve(productList))
 export class FilterableProductTable extends Component {
   constructor(props) {
     super(props)
-  
+
     this.state = {
-       productList: [],
-       search: '',
-       inStock: false
+      productList: [],
+      search: '',
+      inStock: false
     }
   }
 
@@ -38,28 +38,30 @@ export class FilterableProductTable extends Component {
   handleChange = (event) => {
     const name = event.target.name
 
-    if(name === 'search') {
+    if (name === 'search') {
       this.setState({
         search: event.target.value
       })
-    }else if(name === 'in_stock') {
+    } else if (name === 'in_stock') {
       this.setState({
         inStock: event.target.checked
       })
     }
   }
- 
+
   render() {
-    const {productList, search, inStock} = this.state
-    console.log(this.state.search);
+    const { productList, search, inStock } = this.state
     return (
       <div className='filter_product'>
-        <SearchBar 
-          onSearchInputChange={this.handleChange} 
-          searchText={search} 
-          inStock={inStock} 
+        <SearchBar
+          onSearchInputChange={this.handleChange}
+          searchText={search}
+          inStock={inStock}
         />
-        <ProductTable productList={productList} />
+        <ProductTable
+          productList={productList}
+          searchText={search}
+          inStock={inStock} />
       </div>
     )
   }
